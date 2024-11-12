@@ -1,0 +1,113 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body layout using CSS Grid */
+body {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header header"
+        "sidebar main advertisement"
+        "footer footer footer";
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    grid-area: header;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin: 10px 0;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Main Content Section */
+#main {
+    grid-area: main;
+    padding: 20px;
+}
+
+/* Advertisement Section */
+#advertisement {
+    grid-area: advertisement;
+    padding: 20px;
+    text-align: center;
+}
+
+#advertisement img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Footer Styling */
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Button and Input Styling */
+input[type="number"], button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+/* Result Styling */
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "advertisement"
+            "footer";
+    }
+
+    #sidebar {
+        display: none; /* Hide sidebar on smaller screens */
+    }
+
+    #advertisement {
+        margin-top: 20px;
+    }
+}
